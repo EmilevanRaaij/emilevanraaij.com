@@ -1,0 +1,306 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Ubuntu', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  height: 100vh;
+  overflow: hidden;
+  color: white;
+  background-repeat: no-repeat;
+
+  background: linear-gradient(135deg, rgb(99.608% 77.647% 27.451%) 0%, rgb(99.608% 77.537% 27.456%) 6.25%, rgb(99.611% 76.765% 27.491%) 12.5%, rgb(99.619% 74.674% 27.585%) 18.75%, rgb(99.634% 70.616% 27.768%) 25%, rgb(99.659% 63.967% 28.07%) 31.25%, rgb(99.695% 54.148% 28.521%) 37.5%, rgb(99.746% 40.64% 29.152%) 43.75%, rgb(99.811% 29.993% 36.964%) 50%, rgb(99.875% 30.835% 55.857%) 56.25%, rgb(99.922% 31.469% 69.785%) 62.5%, rgb(99.955% 31.924% 79.623%) 68.75%, rgb(99.977% 32.229% 86.151%) 75%, rgb(99.99% 32.414% 90.084%) 81.25%, rgb(99.997% 32.509% 92.096%) 87.5%, rgb(100% 32.544% 92.836%) 93.75%, rgb(100% 32.549% 92.941%) 100% );
+  background-size: 400vw 400vh;
+  animation: movebg 60s linear infinite;
+}
+
+@keyframes movebg {
+  0% {
+      background-position: 0vw 0vh;
+  }
+  25% {
+      background-position: 0vw -300vh;
+  }
+  50% {
+      background-position: -300vw -300vh;
+  }
+  75% {
+      background-position: -300vw 0vh;
+  }
+  100% {
+      background-position: 0vw 0vh;
+  }
+}
+
+.hero-text{
+  margin-top: 40vh;
+  margin-left: 20vw;
+}
+
+.close{
+  background-color: #00000000;
+  border: none;
+  float: right;
+  width: 60px;
+  cursor: pointer;
+}
+
+.close img{
+  width: 100%;
+}
+
+$naviconheight: calc(85vh / 9);
+
+.sideNav{
+  position: fixed;
+  height: 100vh;
+  right: 0;
+  top: 0;
+  background: black;
+  box-shadow: 0 0 5px black;
+
+  
+  .navButton{
+    background-color: #333;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    margin: 10px;
+    width: $naviconheight;
+    padding: 5px;
+    transition: all .2s;
+    aspect-ratio: 1/1;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+  }
+  
+  a.navButton{
+    width: calc($naviconheight - 10px);
+  }
+  
+  .navButton:hover{
+    border-radius: 50px;
+  }
+  
+  .navButton img{
+    width: 100%;
+  }
+  
+  .navButton h3{
+    box-shadow: 0 0 5px black;
+    position: absolute;
+    z-index: -2;
+    transform: translateX(40px);
+    width: max-content;
+    background-color: black;
+    color: black;
+    padding: 25px;
+    border-radius: 30px 0px 0px 30px;
+    transition: ease-out all .4s;
+  }
+  
+  .navButton:hover h3{
+    width: max-content;
+    color: white;
+    transform: translateX(-100%);
+  }
+
+  .mobilenavbutton-wrap{
+    display: flex;
+    align-items: center;
+    aspect-ratio: 1/1;
+    padding: 0;
+  }
+
+  .mobilenavbutton{
+    background-color: #333;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    width: $naviconheight;
+    aspect-ratio: 1/1;
+    margin: 10px;
+    z-index: 2;
+  }
+
+  .mobilenavbutton:hover{
+    border-radius: 50px;
+  }
+
+  .mobilenavbutton img{
+    width: 100%;
+  }
+
+  .mobilenavbutton-wrap a{
+    box-shadow: 0 0 5px black;
+    position: absolute;
+    background-color: black;
+    text-decoration: none;
+    padding: 20px;
+    color: black;
+    padding: 10px;
+    padding-left: 20px;
+    border-radius: 30px 0px 0px 30px;
+    transition: ease-out all .4s;
+    transform: translateX(100px);
+  }
+
+  .mobilenavbutton-wrap a.open{
+    color: white;
+    transform: translateX(-100%);
+  }
+}
+
+.content-card{
+  position: fixed;
+  top: 5vh;
+  background-color: white;
+  color: black;
+  padding: 40px;
+  box-shadow: 0 0 5px white;
+  height: 70vh;
+  width: 50vw;
+  min-width: 600px;
+  transition: all 1s;
+}
+
+.content-card.open{
+  left: 10vw;
+}
+
+.content-card.closed{
+  left: 100vw;
+}
+
+.portfolio-body{
+  height: 90%;
+  overflow-y: scroll;
+}
+
+.sites{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.site{
+  display: grid;
+  grid-template-columns: 1fr;
+  margin: 30px;
+  box-shadow: 0 0 20px gray;
+  border-radius: 5px;
+  text-decoration: none;
+  img{
+    width: 100%;
+  }
+  h4{
+    text-align: center;
+    color: gray;
+  }
+  transition: all .2s;
+}
+
+.site:hover{
+  transform: scale(1.05);
+}
+
+.bio{
+  .bio-container{
+    overflow-y: scroll;
+    height: 85%;
+  }
+  .pf{
+    width: 30%;
+    border-radius: 40px;
+    float: left;
+    margin-right: 10px;
+  }
+  h1{
+    text-align: left;
+  }
+  p{
+    text-align: left;
+  }
+}
+
+.skills{
+  .skills-body{
+    height: 85%;
+    overflow: scroll;
+  }
+
+  .skills-grid{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 10px;
+  }
+
+  .skill{
+    width: 100%;
+    position: relative;
+    img{
+      width: 100%;
+      transition: all .2s;
+    }
+    p{
+      margin: 0;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-weight: bolder;
+      color: #00000000;
+      transition: all .2s;
+    }
+  }
+
+  .skill:hover{
+    img{
+      opacity: .5;
+    }
+    p{
+      color: black;
+    }
+  }
+}
+
+@media screen and (max-width: 850px) {
+  .content-card.open{
+    left: 20px;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .content-card{
+    height: calc(100vh - 10px);
+    min-width: 0;
+    width: calc(100vw - $naviconheight - 30px);
+    top: 0;
+    padding: 5px;
+  }
+  .content-card.open{
+    left: 0;
+  }
+  .sites{
+    grid-template-columns: 1fr;
+  }
+  .site{
+    margin: 0;
+    margin-bottom: 5px;
+    border-radius: 0;
+  }
+  .skills-grid{
+    grid-template-columns: repeat(2, 1fr)!important;
+    grid-gap: 5px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .hero-text{
+    margin-top: 40vh;
+    margin-left: 20px;
+    max-width: calc(100vw - $naviconheight - 100px);
+  }
+}
